@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: bogat-chatbot
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: CLICKUP_API_KEY
+        sync: false
+      - key: CLICKUP_LEADS_LIST_ID
+        value: "901326738812"
+      - key: ALLOWED_ORIGIN
+        value: "https://www.bogatarchitecture.com"
