@@ -7,13 +7,13 @@
     --lumen-green:      #242E22;
     --lumen-green-mid:  #2e3b2b;
     --lumen-green-soft: #354132;
-    --lumen-gold:       #C9A84C;
-    --lumen-gold-dim:   rgba(201,168,76,0.18);
-    --lumen-gold-glow:  rgba(201,168,76,0.35);
+    --lumen-gold:       #ffffff;
+    --lumen-gold-dim:   rgba(255,255,255,0.12);
+    --lumen-gold-glow:  rgba(255,255,255,0.2);
     --lumen-bg:         #1a1f19;
     --lumen-msg-bg:     #232920;
-    --lumen-text:       #e8e4d8;
-    --lumen-muted:      rgba(232,228,216,0.45);
+    --lumen-text:       #f0f0ed;
+    --lumen-muted:      rgba(240,240,237,0.4);
   }
 
   /* ── Bubble button ─────────────────────────────────────── */
@@ -26,7 +26,7 @@
     height: 58px;
     border-radius: 50%;
     background: var(--lumen-green);
-    border: 1.5px solid rgba(201,168,76,0.4);
+    border: 1.5px solid rgba(255,255,255,0.35);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -40,7 +40,7 @@
   }
   @keyframes lumen-pulse {
     0%, 100% { box-shadow: 0 0 0 0 var(--lumen-gold-glow), 0 6px 24px rgba(0,0,0,0.45); }
-    50%       { box-shadow: 0 0 0 8px rgba(201,168,76,0), 0 6px 24px rgba(0,0,0,0.45); }
+    50%       { box-shadow: 0 0 0 8px rgba(255,255,255,0), 0 6px 24px rgba(0,0,0,0.45); }
   }
   #bogat-chat-bubble:hover {
     transform: scale(1.08);
@@ -75,9 +75,9 @@
     max-height: calc(100vh - 120px);
     background: var(--lumen-bg);
     border-radius: 18px;
-    border: 1px solid rgba(201,168,76,0.2);
+    border: 1px solid rgba(255,255,255,0.15);
     box-shadow:
-      0 0 0 1px rgba(201,168,76,0.06),
+      0 0 0 1px rgba(255,255,255,0.05),
       0 24px 60px rgba(0,0,0,0.6),
       0 0 40px rgba(0,0,0,0.3);
     display: none;
@@ -124,7 +124,7 @@
     height: 36px;
     border-radius: 50%;
     background: var(--lumen-green-soft);
-    border: 1.5px solid rgba(201,168,76,0.5);
+    border: 1.5px solid rgba(255,255,255,0.4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,7 +133,7 @@
     font-weight: 700;
     color: var(--lumen-gold);
     letter-spacing: 0;
-    box-shadow: 0 0 10px rgba(201,168,76,0.2);
+    box-shadow: 0 0 10px rgba(255,255,255,0.15);
   }
   .bogat-header-text {
     flex: 1;
@@ -183,7 +183,7 @@
   .bogat-chat-messages::-webkit-scrollbar { width: 3px; }
   .bogat-chat-messages::-webkit-scrollbar-track { background: transparent; }
   .bogat-chat-messages::-webkit-scrollbar-thumb {
-    background: rgba(201,168,76,0.2);
+    background: rgba(255,255,255,0.15);
     border-radius: 2px;
   }
 
@@ -201,7 +201,7 @@
     height: 24px;
     border-radius: 50%;
     background: var(--lumen-green-soft);
-    border: 1px solid rgba(201,168,76,0.35);
+    border: 1px solid rgba(255,255,255,0.2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -225,18 +225,18 @@
   .bogat-msg.bot {
     background: var(--lumen-msg-bg);
     color: var(--lumen-text);
-    border: 1px solid rgba(201,168,76,0.1);
+    border: 1px solid rgba(255,255,255,0.08);
     border-bottom-left-radius: 4px;
     align-self: flex-start;
     box-shadow: 0 2px 12px rgba(0,0,0,0.25);
   }
   .bogat-msg.user {
-    background: linear-gradient(135deg, #C9A84C, #b5923e);
-    color: #1a1a0e;
+    background: linear-gradient(135deg, #ffffff, #d0d0d0);
+    color: #1a1f19;
     font-weight: 500;
     border-bottom-right-radius: 4px;
     align-self: flex-end;
-    box-shadow: 0 2px 16px rgba(201,168,76,0.25);
+    box-shadow: 0 2px 16px rgba(255,255,255,0.15);
   }
 
   /* ── Typing indicator ──────────────────────────────────── */
@@ -248,7 +248,7 @@
   .bogat-typing {
     padding: 12px 16px;
     background: var(--lumen-msg-bg);
-    border: 1px solid rgba(201,168,76,0.1);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 14px;
     border-bottom-left-radius: 4px;
     display: flex;
@@ -276,14 +276,14 @@
     display: flex;
     gap: 8px;
     padding: 12px 12px 14px;
-    border-top: 1px solid rgba(201,168,76,0.1);
+    border-top: 1px solid rgba(255,255,255,0.08);
     flex-shrink: 0;
     background: var(--lumen-green);
   }
   .bogat-chat-input {
     flex: 1;
     background: var(--lumen-green-soft);
-    border: 1px solid rgba(201,168,76,0.2);
+    border: 1px solid rgba(255,255,255,0.15);
     border-radius: 10px;
     padding: 9px 13px;
     font-size: 13.5px;
@@ -298,12 +298,12 @@
     caret-color: var(--lumen-gold);
   }
   .bogat-chat-input:focus {
-    border-color: rgba(201,168,76,0.55);
-    box-shadow: 0 0 0 3px rgba(201,168,76,0.08);
+    border-color: rgba(255,255,255,0.5);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.06);
   }
   .bogat-chat-input::placeholder { color: var(--lumen-muted); }
   .bogat-chat-input::-webkit-scrollbar { width: 3px; }
-  .bogat-chat-input::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.2); }
+  .bogat-chat-input::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); }
 
   .bogat-chat-send {
     width: 38px;
@@ -320,14 +320,14 @@
     align-self: flex-end;
   }
   .bogat-chat-send:hover {
-    background: #d4b05a;
-    box-shadow: 0 0 14px rgba(201,168,76,0.4);
+    background: #e0e0e0;
+    box-shadow: 0 0 14px rgba(255,255,255,0.35);
     transform: scale(1.05);
   }
   .bogat-chat-send:active { transform: scale(0.97); }
   .bogat-chat-send:disabled {
     background: var(--lumen-green-soft);
-    border: 1px solid rgba(201,168,76,0.15);
+    border: 1px solid rgba(255,255,255,0.1);
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
@@ -339,8 +339,8 @@
   .bogat-lead-banner {
     margin: 0 12px 10px;
     padding: 10px 14px;
-    background: rgba(201,168,76,0.08);
-    border: 1px solid rgba(201,168,76,0.3);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: 10px;
     font-size: 12px;
     color: var(--lumen-gold);
@@ -353,7 +353,7 @@
     text-align: center;
     padding: 6px 0 8px;
     font-size: 10px;
-    color: rgba(201,168,76,0.3);
+    color: rgba(255,255,255,0.2);
     letter-spacing: 0.04em;
     background: var(--lumen-green);
     text-transform: uppercase;
