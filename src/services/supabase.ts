@@ -9,6 +9,8 @@ export interface Lead {
   name: string;
   email: string;
   project_type: string;
+  location?: string;
+  visitor_type?: string;
 }
 
 export async function saveLead(lead: Lead): Promise<{ id: string } | null> {

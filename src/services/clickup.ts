@@ -10,8 +10,24 @@ export async function createLeadTask(lead: Lead): Promise<string | null> {
     return null;
   }
 
-  const taskName = `New Lead: ${lead.name} — ${lead.project_type}`;
-  const description = `**New chatbot lead captured**\n\n**Name:** ${lead.name}\n**Email:** ${lead.email}\n**Project Type:** ${lead.project_type}\n**Source:** Website chatbot\n**Captured:** ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })}`;
+  const location = lead.location && lead.location !== "not specified" ? lead.location : "—";
+  const visitorType = lead.visitor_type || "general";
+  const taskName = `🏗 ${lead.name} — ${lead.project_type}`;
+  const description = [
+    "**New lead captured via website chatbot (Lumen)**",
+    "",
+    `**Name:** ${lead.name}`,
+    `**Email:** ${lead.email}`,
+    `**Project:** ${lead.project_type}`,
+    `**Location/Market:** ${location}`,
+    `**Visitor Type:** ${visitorType}`,
+    `**Source:** Website chatbot`,
+    `**Captured:** ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })} ET`,
+  ].join("\n");
+
+  // Priority: developer/investor/press = urgent (1), others = high (2)
+  const urgentTypes = ["developer", "investor", "press"];
+  const priority = urgentTypes.includes(visitorType.toLowerCase()) ? 1 : 2;
 
   const response = await fetch(`${CLICKUP_API_BASE}/list/${LEADS_LIST_ID}/task`, {
     method: "POST",
@@ -23,8 +39,8 @@ export async function createLeadTask(lead: Lead): Promise<string | null> {
       name: taskName,
       description,
       status: "Open",
-      priority: 2, // High
-      tags: ["chatbot-lead"],
+      priority,
+      tags: ["chatbot-lead", visitorType],
     }),
   });
 
