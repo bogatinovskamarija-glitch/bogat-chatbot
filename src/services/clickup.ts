@@ -38,7 +38,7 @@ export async function createLeadTask(lead: Lead): Promise<string | null> {
     body: JSON.stringify({
       name: taskName,
       description,
-      status: "Open",
+      status: "not started",
       priority,
       tags: ["chatbot-lead", visitorType],
     }),
