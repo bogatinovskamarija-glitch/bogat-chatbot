@@ -202,7 +202,7 @@ export async function streamChat(
 
   try {
     const stream = await client.messages.stream({
-      model: "claude-opus-4-7",
+      model: "claude-sonnet-4-6",
       max_tokens: 1024,
       thinking: { type: "adaptive" },
       system: SYSTEM_PROMPT,

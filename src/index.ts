@@ -9,8 +9,11 @@ const PORT = process.env.PORT || 3000;
 // CORS — allow only the Bogat Architecture website (and localhost for dev)
 const allowedOrigins = [
   process.env.ALLOWED_ORIGIN || "https://www.bogatarchitecture.com",
+  "https://www.bogatarchitecture.com",
   "https://bogatarchitecture.com",
+  "https://bogat-architecture-design.webflow.io",
   "http://localhost:3000",
+  "http://localhost:4444",
   "http://localhost:8080",
 ];
 
